@@ -1,15 +1,13 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, only:[:new, :create]
-  def index
-    @doses = Dose.all
-  end
+
   def new
     @dose = Dose.new
   end
 
   def create
     @dose = Dose.new(set_params)
-    @dose.cocktail_id = @cocktail.id
+    @dose.cocktail = @cocktail
     if @dose.save
       redirect_to @cocktail
     else

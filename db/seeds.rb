@@ -18,3 +18,4 @@ Ingredient.delete_all
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 response = RestClient.get(url)
 JSON.parse(response)['drinks'].each { |name| Ingredient.create(name: name['strIngredient1'])}
+

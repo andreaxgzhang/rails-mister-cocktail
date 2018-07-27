@@ -1,5 +1,13 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Add a cocktail" %>
-<% end %>
-
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="flat-form">
+        <h3>Add a new Flat</h3>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <%= f.input :name %>
+          <%= f.submit "Add a cocktail", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
